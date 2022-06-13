@@ -1,34 +1,41 @@
 <template>
-<div>
-  <MyHeader/>
-  <div class = "wrap">
-    <MyMenu/>
-    <MyContent/>
-  </div>
-</div>
-<div>
-  <MyBox color = "blue"/>
-  <MyBox color = "purple"/>
-  <MyBox color = "green"/>
-  <MyBox color = "blue"/>
-  <MyBox color = "purple"/>
-  <MyBox/>
-</div>
+    <div id="app">
+      <MyWebtoon :items="webtoons"/>
+    </div>
+    <div></div>
 </template>
 
 <script>
-import MyContent from '@/components/MyContent';
-import MyHeader from '@/components/MyHeader';
-import MyMenu from '@/components/MyMenu';
-import MyBox from '@/components/MyBox';
+import MyWebtoon from '@/components/MyWebtoon.vue';
 export default {
-  name: "app" , 
-  components: {
-    MyContent,
-    MyHeader,
-    MyMenu,
-    MyBox
-  }
+    name: "app",
+    data() {
+        return {
+            webtoons: [
+                {
+                    name: "참교육",
+                    link: "https://comic.naver.com/webtoon/list?titleId=758037&weekday=mon",
+                    img: "https://shared-comic.pstatic.net/thumb/webtoon/758037/thumbnail/thumbnail_IMAG10_a2297504-4912-4c7e-a5a8-524d6fc77103.jpg"
+                },
+                {
+                    name: "신의탑",
+                    link: "https://comic.naver.com/webtoon/list?titleId=183559&weekday=mon",
+                    img: "https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_9a752bec-9ebd-4214-9449-28cf4defc650.jpg"
+                },
+                {
+                    name: "뷰티풀 군바리",
+                    link: "https://comic.naver.com/webtoon/list?titleId=648419&weekday=mon",
+                    img: "https://shared-comic.pstatic.net/thumb/webtoon/648419/thumbnail/thumbnail_IMAG10_1421195d-13be-4cde-bcf9-0c78d51c5ea3.jpg"
+                },
+                {
+                    name: "윈드브레이커",
+                    link: "https://comic.naver.com/webtoon/list?titleId=602910&weekday=mon",
+                    img: "https://shared-comic.pstatic.net/thumb/webtoon/602910/thumbnail/thumbnail_IMAG10_3944ddad-8a6b-4568-98be-ca5f0be357d9.jpg"
+                }
+            ]
+        };
+    },
+    components: { MyWebtoon }
 };
 </script>
 
