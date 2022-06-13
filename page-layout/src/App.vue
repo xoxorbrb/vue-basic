@@ -1,53 +1,53 @@
 <template>
-    <div id="app">
-      <MyWebtoon :items="webtoons"/>
+    <div>
+      <!--웹툰-->
+      <!-- <h1>webtoon</h1>
+      <input type = "checkbox" id="참교육" value ="참교육" v-model="checkedWebtoons">
+      <label for="참교육">참교육</label>
+      <input type = "checkbox" id="신의탑" value ="신의탑" v-model="checkedWebtoons">
+      <label for="신의탑">신의탑</label>
+      <input type = "checkbox" id="뷰티풀군바리" value ="뷰티풀군바리" v-model="checkedWebtoons">
+      <label for="뷰티풀군바리">뷰티풀군바리</label>
+      <input type = "checkbox" id="윈드브레이커" value ="윈드브레이커" v-model="checkedWebtoons">
+      <label for="윈드브레이커">윈드브레이커</label>
+      <br>
+      <span>찜한웹툰: {{checkedWebtoons}}</span> -->
+      
+      <!--성별-->
+      <!-- <h2>성별</h2>
+      <input type="radio" id = "남" value = "male" v-model="gender">
+      <label for="남">남</label>
+      <br>
+      <input type="radio" id = "여" value = "female" v-model="gender">
+      <label for="여">여</label>
+      <br>
+      <span>당신의 성별을 알려주세요: {{gender}}</span> -->
+
+      <!--선호장르-->
+      <h2>선호장르</h2>
+      <select v-model="category">
+          <option disabled value>선택해주세요</option>
+          <option>로맨스</option>
+          <option>호러</option>
+          <option>스릴러</option>
+      </select>
+      <span>선택: {{category}}</span>
     </div>
-    <div></div>
+    
 </template>
 
 <script>
-import MyWebtoon from '@/components/MyWebtoon.vue';
 export default {
     name: "app",
     data() {
         return {
-            webtoons: [
-                {
-                    name: "참교육",
-                    link: "https://comic.naver.com/webtoon/list?titleId=758037&weekday=mon",
-                    img: "https://shared-comic.pstatic.net/thumb/webtoon/758037/thumbnail/thumbnail_IMAG10_a2297504-4912-4c7e-a5a8-524d6fc77103.jpg",
-                    isUpdate: true
-                },
-                {
-                    name: "신의탑",
-                    link: "https://comic.naver.com/webtoon/list?titleId=183559&weekday=mon",
-                    img: "https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_9a752bec-9ebd-4214-9449-28cf4defc650.jpg",
-                    isUpdate: true
-                },
-                {
-                    name: "뷰티풀 군바리",
-                    link: "https://comic.naver.com/webtoon/list?titleId=648419&weekday=mon",
-                    img: "https://shared-comic.pstatic.net/thumb/webtoon/648419/thumbnail/thumbnail_IMAG10_1421195d-13be-4cde-bcf9-0c78d51c5ea3.jpg",
-                    isUpdate: false
-                },
-                {
-                    name: "윈드브레이커",
-                    link: "https://comic.naver.com/webtoon/list?titleId=602910&weekday=mon",
-                    img: "https://shared-comic.pstatic.net/thumb/webtoon/602910/thumbnail/thumbnail_IMAG10_3944ddad-8a6b-4568-98be-ca5f0be357d9.jpg",
-                    isUpdate: false
-                }
-            ]
+            // checkedWebtoons: []
+            // gender: ""
+            category: ""
         };
-    },
-    components: { MyWebtoon }
+    }
 };
 </script>
 
 <style scoped>
-h1 {
-  color: #03a9f4
-}
-.wrap {
-  display: flex;
-}
 </style>
