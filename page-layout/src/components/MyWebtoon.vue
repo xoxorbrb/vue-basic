@@ -7,9 +7,11 @@
                     <img :src="item.img">
                     <span class="tit">제목: {{item.name}}</span>
                 </a>
+                <span class="tag" v-if ="item.isUpdate">N</span>
             </li>
         </ul>
     </div>
+    
 </template>
 <script>
 export default {
@@ -36,6 +38,7 @@ export default {
         margin: 0 auto;
     }
     .item {
+        position: relative;
         border-bottom: 1px solid #ebebeb;
         margin-bottom: 25px;
     }
@@ -51,5 +54,14 @@ export default {
         background: #ebebeb;
         border-radius: 4px;
     }
-
+    .tag{
+        position:absolute;
+        left: 10px;
+        top: 10px;
+        padding: 5px 30px;
+        color: #fff;
+        border-radius: 4px;
+        background: #fc2332;
+        font-weight: bold;
+    }
 </style>
